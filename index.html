@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <body>
+        <script>
+            
+            let playerSelection
+            let computerSelection; 
+            let announcement;
+
+            function getComputerChoice () {
+
+                let randomNumber = Math.floor(Math.random() * 100);
+                 if (randomNumber >= 0 && randomNumber < 33) {
+                    computerSelection = "rock";
+                 } else if (randomNumber >= 33 && randomNumber < 66) {
+                    computerSelection = "paper";
+                 } else {
+                    computerSelection = "scissors";
+                 }
+                 return computerSelection;
+
+            }
+
+            
+            while(true) {
+                playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
+            if (playerSelection === "rock" || playerSelection === "paper" || playerSelection ==="scissors") {
+                break;
+            } else {
+                alert("This is not an answer");
+            }
+        }
+
+            getComputerChoice()
+
+            console.log(computerSelection)
+            console.log(playerSelection)
+
+
+            function roundStart(computerSelection, playerSelection) {
+
+                if (computerSelection === playerSelection) {
+                    console.log(computerSelection)
+                    console.log(playerSelection)
+                    console.log(computerSelection === playerSelection)
+                    announcement = "It's a tie! You both choose the same!"
+                } else if (computerSelection === "rock" && playerSelection === "paper") {
+                    announcement =  "You win! Paper beats rock!";
+                } else if (computerSelection === "rock" && playerSelection === "scissors") {
+                    announcement =  "You lose! Rock beats scissors!";
+                } else if (computerSelection === "paper" && playerSelection === "rock") {
+                    announcement =  "You lose! Paper beats rock!";
+                } else if (computerSelection === "paper" && playerSelection === "scissors") {
+                    announcement =  "You win! Scissors beats paper!";
+                } else if (computerSelection === "scissors" && playerSelection === "rock") {
+                    announcement =  "You win! Rock beats scissors!";
+                } else if (computerSelection === "scissors" && playerSelection === "paper") {
+                    announcement =  "You lose! Scissors beats paper!";
+                } else {
+                    announcement =  "It's a tie! You both choose the same!";
+                }
+                return announcement;
+            }
+
+            console.log(roundStart(computerSelection, playerSelection))
+            console.log("Hi")
+        </script>
+    </body>
+</html>
