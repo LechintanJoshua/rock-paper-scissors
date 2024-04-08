@@ -14,7 +14,6 @@
             let announcement;
 
             function getComputerChoice () {
-
                 let randomNumber = Math.floor(Math.random() * 100);
                  if (randomNumber >= 0 && randomNumber < 33) {
                     computerSelection = "rock";
@@ -24,7 +23,6 @@
                     computerSelection = "scissors";
                  }
                  return computerSelection;
-
             }
 
             
@@ -44,13 +42,7 @@
 
 
             function roundStart(computerSelection, playerSelection) {
-
-                if (computerSelection === playerSelection) {
-                    console.log(computerSelection)
-                    console.log(playerSelection)
-                    console.log(computerSelection === playerSelection)
-                    announcement = "It's a tie! You both choose the same!"
-                } else if (computerSelection === "rock" && playerSelection === "paper") {
+                if (computerSelection === "rock" && playerSelection === "paper") {
                     announcement =  "You win! Paper beats rock!";
                 } else if (computerSelection === "rock" && playerSelection === "scissors") {
                     announcement =  "You lose! Rock beats scissors!";
