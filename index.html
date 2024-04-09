@@ -12,6 +12,11 @@
             let playerSelection
             let computerSelection; 
             let announcement;
+            let count;
+            let computerScore = 0;
+            let playerScore = 0;
+
+            
 
             function getComputerChoice () {
                 let randomNumber = Math.floor(Math.random() * 100);
@@ -43,24 +48,42 @@
 
             function roundStart(computerSelection, playerSelection) {
                 if (computerSelection === "rock" && playerSelection === "paper") {
-                    announcement =  "You win! Paper beats rock!";
+                    announcement =  "You win!";
                 } else if (computerSelection === "rock" && playerSelection === "scissors") {
-                    announcement =  "You lose! Rock beats scissors!";
+                    announcement =  "You lose!";
                 } else if (computerSelection === "paper" && playerSelection === "rock") {
-                    announcement =  "You lose! Paper beats rock!";
+                    announcement =  "You lose!";
                 } else if (computerSelection === "paper" && playerSelection === "scissors") {
-                    announcement =  "You win! Scissors beats paper!";
+                    announcement =  "You win!";
                 } else if (computerSelection === "scissors" && playerSelection === "rock") {
-                    announcement =  "You win! Rock beats scissors!";
+                    announcement =  "You win!";
                 } else if (computerSelection === "scissors" && playerSelection === "paper") {
-                    announcement =  "You lose! Scissors beats paper!";
+                    announcement =  "You lose!";
                 } else {
                     announcement =  "It's a tie! You both choose the same!";
                 }
+                alert(announcement);
                 return announcement;
             }
 
-            console.log(roundStart(computerSelection, playerSelection))
+            roundStart(computerSelection, playerSelection)
+            // console.log(roundStart(computerSelection, playerSelection))
+
+            
+            function scoreBoard(announcement) {
+                if (announcement === "You win!") {
+                    playerScore += 1;
+                } else if (announcement === "You lose!") {
+                    computerScore += 1;
+                } else 
+                return playerScore;
+                return computerScore;
+            }
+
+            scoreBoard(announcement)
+
+            
+            console.log("The end of the game")
             console.log("Hi")
         </script>
     </body>
