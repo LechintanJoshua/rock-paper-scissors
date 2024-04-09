@@ -12,11 +12,11 @@
             let playerSelection
             let computerSelection; 
             let announcement;
-            let count;
+            let count = 0;
             let computerScore = 0;
             let playerScore = 0;
 
-            
+            while(count <= 4) {
 
             function getComputerChoice () {
                 let randomNumber = Math.floor(Math.random() * 100);
@@ -30,7 +30,6 @@
                  return computerSelection;
             }
 
-            
             while(true) {
                 playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
             if (playerSelection === "rock" || playerSelection === "paper" || playerSelection ==="scissors") {
@@ -41,10 +40,6 @@
         }
 
             getComputerChoice()
-
-            console.log(computerSelection)
-            console.log(playerSelection)
-
 
             function roundStart(computerSelection, playerSelection) {
                 if (computerSelection === "rock" && playerSelection === "paper") {
@@ -67,10 +62,8 @@
             }
 
             roundStart(computerSelection, playerSelection)
-            // console.log(roundStart(computerSelection, playerSelection))
-
             
-            function scoreBoard(announcement) {
+            function scoreCounter(announcement) {
                 if (announcement === "You win!") {
                     playerScore += 1;
                 } else if (announcement === "You lose!") {
@@ -80,11 +73,29 @@
                 return computerScore;
             }
 
-            scoreBoard(announcement)
-
             
-            console.log("The end of the game")
-            console.log("Hi")
+            scoreCounter(announcement)
+            count++;
+            //Sa folosesti git commit pe acest loop de 5 ori
+
+        }
+
+            function winner(computerScore, playerScore) {
+                if (computerScore > playerScore) {
+                    alert("You lost! Computer wins the best of 5!");
+                } else if (computerScore < playerScore) {
+                    alert("You won! Player wins the best of 5");
+                } else {
+                    alert("Tie! You both have gathered the same amount of points");
+                }
+            }
+
+            winner(computerScore, playerScore)
+
+            alert("The end of the game!")
+
+            console.log(computerScore)
+            console.log(playerScore)
         </script>
     </body>
 </html>
