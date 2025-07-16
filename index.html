@@ -5,30 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="script.js" defer></script> -->
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1><strong>Rock Paper Scissors</strong></h1>
+    <header>
+        <h1><strong>Rock Paper Scissors</strong></h1>
+    </header>
 
-    <div>
-        <div>Player Score</div>
-        <div></div>
-    </div>
-
-    <div>
-        <div>Rock</div>
-        <div>Paper</div>
-        <div>Scissors</div>
+    <div class="scoreboard">
+        <div>Player Score:</div>
+        <div class="plScore"></div>
     </div>
 
-    <div>
-        <div>Computer Score</div>
-        <div></div>
+    <div class="selection">
+        <div>
+            <div><img src="images/Rock.png" alt="Rock" class="Rock"></div>
+            <div>Rock</div>
+        </div>
+        <div>
+            <div><img src="images/Paper.png" alt="Paper" class="Paper"></div>
+            <div>Paper</div>
+        </div>
+        <div>
+            <div><img src="images/Scissors.png" alt="Scissors" class="Scissors"></div>
+            <div>Scissors</div>
+        </div>
     </div>
-    
-    <div>
-        <button></button>
-        <button></button>
+
+    <div class="scoreboard">
+        <div>Computer Score:</div>
+        <div class="cmScore"></div>
     </div>
+
+    <footer>
+        <div class="btnSelection">
+            <button class="restart">Restart</button>
+            <button class="finish">Finish</button>
+        </div>
+    </footer>
 </body>
 </html>
